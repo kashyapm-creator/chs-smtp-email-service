@@ -1,0 +1,29 @@
+{
+    "name": "chs/email-service",
+    "description": "A reusable email service for Laravel with support for SendPulse, Smtp2Go, and dynamic provider resolution.",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Citizen Home Solutions",
+            "email": "dev@citizenhomesolutions.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/http": "^10.0|^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chs\\EmailService\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Chs\\EmailService\\Providers\\EmailServiceProvider"
+            ]
+        }
+    }
+}
