@@ -50,6 +50,10 @@ class EmailServiceProvider extends ServiceProvider
                 __DIR__.'/EmailServiceProvider.php' => app_path('Providers/EmailServiceProvider.php'),
                 __DIR__.'/../Services/Email' => app_path('Services/Email'),
             ], 'chs-email-full');
+
+            $this->commands([
+                \Chs\EmailService\Console\Commands\InstallEmailService::class,
+            ]);
         }
     }
 }
