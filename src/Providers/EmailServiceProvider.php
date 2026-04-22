@@ -1,12 +1,12 @@
 <?php
 
-namespace Chs\EmailService\app\Providers;
+namespace Chs\EmailService\Providers;
 
-use Chs\EmailService\app\Services\Email\DynamicEmailService;
-use Chs\EmailService\app\Services\Email\EmailServiceInterface;
-use Chs\EmailService\app\Services\Email\MockEmailService;
-use Chs\EmailService\app\Services\Email\SendPulseEmailService;
-use Chs\EmailService\app\Services\Email\Smtp2GoEmailService;
+use Chs\EmailService\Services\Email\DynamicEmailService;
+use Chs\EmailService\Services\Email\EmailServiceInterface;
+use Chs\EmailService\Services\Email\MockEmailService;
+use Chs\EmailService\Services\Email\SendPulseEmailService;
+use Chs\EmailService\Services\Email\Smtp2GoEmailService;
 use Illuminate\Support\ServiceProvider;
 
 class EmailServiceProvider extends ServiceProvider
@@ -22,7 +22,7 @@ class EmailServiceProvider extends ServiceProvider
         $this->app->bind(EmailServiceInterface::class, DynamicEmailService::class);
         
         $this->mergeConfigFrom(
-            __DIR__.'/../../config/email_templates.php', 'email_templates'
+            __DIR__.'/../config/email_templates.php', 'email_templates'
         );
     }
 
@@ -31,7 +31,7 @@ class EmailServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             // Publish Config
             $this->publishes([
-                __DIR__.'/../../config/email_templates.php' => config_path('email_templates.php'),
+                __DIR__.'/../config/email_templates.php' => config_path('email_templates.php'),
             ], 'chs-email-config');
 
             // Publish Provider (to app/Providers)
@@ -46,7 +46,7 @@ class EmailServiceProvider extends ServiceProvider
 
             // Publish Everything at once
             $this->publishes([
-                __DIR__.'/../../config/email_templates.php' => config_path('email_templates.php'),
+                __DIR__.'/../config/email_templates.php' => config_path('email_templates.php'),
                 __DIR__.'/EmailServiceProvider.php' => app_path('Providers/EmailServiceProvider.php'),
                 __DIR__.'/../Services/Email' => app_path('Services/Email'),
             ], 'chs-email-full');

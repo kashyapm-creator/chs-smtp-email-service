@@ -1,6 +1,6 @@
 <?php
 
-namespace Chs\EmailService\app\Services\Email\Concerns;
+namespace Chs\EmailService\Services\Email\Concerns;
 
 use Illuminate\Support\Facades\Log;
 use function App\Services\Email\Concerns\config;
