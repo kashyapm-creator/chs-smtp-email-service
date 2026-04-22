@@ -1,6 +1,6 @@
 <?php
 
-namespace Chs\EmailService\Contracts;
+namespace Chs\EmailService\app\Services\Email;
 
 interface EmailServiceInterface
 {

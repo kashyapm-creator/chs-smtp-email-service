@@ -1,12 +1,12 @@
 <?php
 
-namespace Chs\EmailService\Services;
+namespace Chs\EmailService\app\Services\Email;
 
-use Chs\EmailService\Contracts\EmailServiceInterface;
-use Chs\EmailService\Models\EmailSentCount;
-use Chs\EmailService\Models\SmtpMailProvider;
+use App\Models\EmailSentCount;
+use App\Models\SmtpMailProvider;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use function App\Services\Email\report;
 
 class DynamicEmailService implements EmailServiceInterface
 {

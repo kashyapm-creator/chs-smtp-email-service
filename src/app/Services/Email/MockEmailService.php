@@ -1,10 +1,8 @@
 <?php
 
-namespace Chs\EmailService\Services;
+namespace Chs\EmailService\app\Services\Email;
 
-use Chs\EmailService\Contracts\EmailServiceInterface;
-
-use App\Services\Email\Concerns\ForcesBetaRecipient;
+use Chs\EmailService\app\Services\Email\Concerns\ForcesBetaRecipient;
 use Illuminate\Support\Facades\Log;
 
 class MockEmailService implements EmailServiceInterface

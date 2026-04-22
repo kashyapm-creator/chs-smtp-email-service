@@ -1,12 +1,13 @@
 <?php
 
-namespace Chs\EmailService\Services;
+namespace Chs\EmailService\app\Services\Email;
 
-use Chs\EmailService\Contracts\EmailServiceInterface;
-use Chs\EmailService\Concerns\ForcesBetaRecipient;
+use Chs\EmailService\app\Services\Email\Concerns\ForcesBetaRecipient;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use function App\Services\Email\config;
+use function App\Services\Email\report;
 
 class Smtp2GoEmailService implements EmailServiceInterface
 {

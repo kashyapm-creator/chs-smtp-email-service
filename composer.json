@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Chs\\EmailService\\Providers\\EmailServiceProvider"
+                "Chs\\EmailService\\app\\Providers\\EmailServiceProvider"
             ]
         }
     }
